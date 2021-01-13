@@ -14,8 +14,7 @@ if ENV == 'dev':
 
 else:
     app.debug = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://cbqtzztgosjtes:fcab08fb6c3285cca5548c1ab604c25690f0d5d5b8237e57528eaaf6ab4dd182' \
-                                            '@ec2-54-159-112-44.compute-1.amazonaws.com:5432/d4oo4df55qr2q0'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://cbqtzztgosjtes:fcab08fb6c3285cca5548c1ab604c25690f0d5d5b8237e57528eaaf6ab4dd182@ec2-54-159-112-44.compute-1.amazonaws.com:5432/d4oo4df55qr2q0'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -57,11 +56,11 @@ def submit():
         try:
             exercise = request.form['Exercise check']
         except:
-            pass
+            exercise = 0
         try:
             meditation = request.form['Meditation check']
         except:
-            pass
+            meditation = 0
         try:
             happiness = request.form['Happiness']
         except:
